@@ -482,7 +482,201 @@ let fine = 0;
       console.log("Total Fine to be paid:", fine.toFixed(2));
    }
 }
+/*================================================================================================*/
 
 
+
+// 1
+let products = ["Laptop", "Mobile", "Camera", "Shoes", "Earphones"];
+let ul1 = document.createElement("ul");
+products.forEach(p => ul1.innerHTML += `<li>${p}</li>`);
+document.body.appendChild(ul1);
+
+// 2
+let prices = [1000, 2000, 3000, 1500];
+let table2 = "<table><tr><th>Original</th><th>Discounted</th></tr>";
+for (let p of prices) table2 += `<tr><td>${p}</td><td>${p * 0.9}</td></tr>`;
+document.body.innerHTML += table2 + "</table>";
+
+// 3
+let items3 = [
+  { name: "Shirt", price: 500, category: "Clothing" },
+  { name: "Watch", price: 1200, category: "Accessories" }
+];
+items3.forEach(i => document.body.innerHTML += `<div><h3>${i.name}</h3><p>${i.price}</p><p>${i.category}</p></div>`);
+
+// 4
+let order = [
+  { name: "Pen", quantity: 2, price: 10 },
+  { name: "Book", quantity: 3, price: 50 }
+];
+let table4 = "<table><tr><th>S.No</th><th>Product</th><th>Qty</th><th>Price</th><th>Total</th></tr>";
+order.forEach((o,i)=> table4+=`<tr><td>${i+1}</td><td>${o.name}</td><td>${o.quantity}</td><td>${o.price}</td><td>${o.quantity*o.price}</td></tr>`);
+document.body.innerHTML += table4 + "</table>";
+
+// 5
+let stockProducts = [
+  { name: "Keyboard", stock: 3 },
+  { name: "Mouse", stock: 0 },
+  { name: "Charger", stock: 2 }
+];
+stockProducts.forEach(p => { if (p.stock > 0) document.body.innerHTML += `<p>${p.name}</p>`; });
+
+// 6
+let div6 = document.createElement("div");
+let c = 10;
+while (c >= 1) { div6.innerHTML += c + "<br>"; c--; }
+document.body.appendChild(div6);
+
+// 7
+let findItem = ["Laptop", "Mobile", "Camera", "TV"];
+for (let i of findItem) { document.body.innerHTML += i + "<br>"; if (i === "Camera") break; }
+
+// 8
+let cart = [499, 299, 1299, 999];
+let i8 = 0, total = 0;
+while (i8 < cart.length) { total += cart[i8]; i8++; }
+document.body.innerHTML += "<p>Total: " + total + "</p>";
+
+// 9
+let stockList = [
+  { name: "Bag", stock: 2 },
+  { name: "Shoes", stock: 1 },
+  { name: "Cap", stock: 0 }
+];
+let i9 = 0;
+while (i9 < stockList.length && stockList[i9].stock > 0) {
+  document.body.innerHTML += `<p>${stockList[i9].name}</p>`;
+  i9++;
+}
+
+// 10
+let prod10 = ["A", "B", "C", "D", "E"];
+let ul10 = document.createElement("ul");
+for (let i = 0; i < 3; i++) ul10.innerHTML += `<li>${prod10[i]}</li>`;
+document.body.appendChild(ul10);
+
+// 11
+let cart11 = [];
+while (cart11.length < 5) {
+  let item = prompt("Enter item");
+  if (item) cart11.push(item);
+}
+document.body.innerHTML += "<p>" + cart11.join(", ") + "</p>";
+
+// 12
+let cart12 = [];
+do { document.body.innerHTML += cart12.length ? "Cart has items" : "Cart is empty"; } while (false);
+
+// 13
+let prices13 = [1000, 2000, 3000];
+let i13 = 0;
+do { document.body.innerHTML += `<p>${prices13[i13]*0.8}</p>`; i13++; } while (i13 < prices13.length);
+
+// 14
+let wishlist = ["Watch", "Shoes", "Bag"];
+let i14 = 0;
+do { document.body.innerHTML += `<p>${wishlist[i14]}</p>`; i14++; } while (i14 < wishlist.length);
+
+// 15
+let stock15 = 3, added = 0;
+do { stock15--; added++; } while (stock15 > 0);
+document.body.innerHTML += `<p>Added ${added} times</p>`;
+
+// 16
+let categories = [
+  { name: "Mobiles", items: ["iPhone", "OnePlus", "Samsung"] },
+  { name: "Laptops", items: ["HP", "Dell", "Asus"] }
+];
+for (let c of categories) {
+  document.body.innerHTML += `<h3>${c.name}</h3>`;
+  for (let i of c.items) document.body.innerHTML += `<p>${i}</p>`;
+}
+
+// 17
+let inv = [
+  { name: "Pen", price: 10, qty: 5 },
+  { name: "Book", price: 50, qty: 2 }
+];
+let table17 = "<table><tr><th>Name</th><th>Price</th><th>Qty</th><th>Total</th></tr>";
+let totalVal = 0;
+for (let p of inv) { 
+  let val = p.price * p.qty; 
+  totalVal += val; 
+  table17 += `<tr><td>${p.name}</td><td>${p.price}</td><td>${p.qty}</td><td>${val}</td></tr>`;
+}
+table17 += `<tr><td colspan='3'>Total Value</td><td>${totalVal}</td></tr></table>`;
+document.body.innerHTML += table17;
+
+// 18
+let cart18 = [1000, 2000, 1500];
+let budget = 5000;
+let sum18 = 0;
+for (let i of cart18) sum18 += i;
+document.body.innerHTML += sum18 <= budget ? "Within Budget" : "Budget Exceeded";
+
+// 19
+let products19 = [
+  { name: "Shirt", type: "Clothing" },
+  { name: "Phone", type: "Electronics" },
+  { name: "Watch", type: "Accessories" }
+];
+products19.forEach(p => {
+  document.body.innerHTML += `<div><h4>${p.type}</h4><p>${p.name}</p></div>`;
+});
+
+// 20
+let pro20 = [
+  { name: "Item1", price: 1000 },
+  { name: "Item2", price: 2000 }
+];
+let table20 = "<table><tr><th>Product</th><th>Price</th><th>GST</th><th>Final</th></tr>";
+for (let p of pro20) {
+  let gst = p.price * 0.18;
+  table20 += `<tr><td>${p.name}</td><td>${p.price}</td><td>${gst}</td><td>${p.price+gst}</td></tr>`;
+}
+document.body.innerHTML += table20 + "</table>";
+
+// 21
+let arr21 = ["A", "B", "C", "D"];
+for (let i = arr21.length - 1; i >= 0; i--) document.body.innerHTML += `<p>${arr21[i]}</p>`;
+
+// 22
+let pro22 = [
+  { name: "A", price: 100 },
+  { name: "B", price: 300 },
+  { name: "C", price: 200 }
+];
+let maxP = pro22[0];
+for (let p of pro22) if (p.price > maxP.price) maxP = p;
+document.body.innerHTML += `<p>${maxP.name}</p>`;
+
+// 23
+let arr23 = [100, 200, 300];
+let sum23 = 0;
+for (let n of arr23) sum23 += n;
+document.body.innerHTML += `<p>Avg: ${sum23/arr23.length}</p>`;
+
+// 24
+let cart24 = [
+  { price: 1000, qty: 2 },
+  { price: 2000, qty: 1 }
+];
+let totalQty = 0, totalAmt = 0;
+cart24.forEach(c => { totalQty += c.qty; totalAmt += c.price * c.qty; });
+document.body.innerHTML += `<p>Total Qty: ${totalQty}</p><p>Cart Value: ${totalAmt}</p>`;
+if (totalAmt > 5000) document.body.innerHTML += "Free delivery";
+
+// 25
+let pro25 = [
+  { name: "Phone", category: "Electronics", price: 1000 },
+  { name: "Shirt", category: "Clothing", price: 500 }
+];
+let table25 = "<table><tr><th>Name</th><th>Category</th><th>Final Price</th></tr>";
+for (let p of pro25) {
+  let disc = p.category === "Electronics" ? 0.1 : p.category === "Clothing" ? 0.05 : 0;
+  table25 += `<tr><td>${p.name}</td><td>${p.category}</td><td>${p.price*(1-disc)}</td></tr>`;
+}
+document.body.innerHTML += table25 + "</table>";
 
 
